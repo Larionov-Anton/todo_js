@@ -27,14 +27,18 @@ function createTodoItem(title) {
 	listItem.appendChild(editInput);
 	listItem.appendChild(editButton);
 	listItem.appendChild(deleteButton);
+
+	bindEvents(listItem);
 	
 	return listItem;
 }
 
+
+
 function bindEvents(todoItem) {
 	const checkbox = todoItem.querySelector('.checkbox');
-	const editButton = todoItem.querySelector('.button.edit');
-	const deleteButton = todoItem.querySelector('.button.delete');
+	const editButton = todoItem.querySelector('.edit');
+	const deleteButton = todoItem.querySelector('.delete');
 
 	checkbox.addEventListener('change', toggleTodoItem);
 	editButton.addEventListener('click', editTodoItem);
@@ -49,6 +53,32 @@ function addTodoItem(event) {
 	const todoItem = createTodoItem(addInput.value);
 	todoList.appendChild(todoItem);
 	addInput.value = '';
+}
+
+function toggleTodoItem() {
+	const listItem = this.parentNode;
+	listItem.classList.toggle('completed');
+}
+
+function editTodoItem() {
+	const listItem = this.parentNode;
+	const title = listItem.querySelector('.title');
+	const editInput = listItem.querySelector('.textfield');
+	const isEditing = listItem.classList.contains('editing');
+
+	if (isEditing) {
+		title.innerText = editInput.value;
+		this.innerText = 'Изменить';
+	} else {
+		editInput.value = title.innerText;
+		this.innerText = 'Сохранить';
+	}
+
+	listItem.classList.toggle('editing');
+}
+
+function deleteTodoItem() {
+
 }
 
 const todoForm = document.getElementById('todo-form');
