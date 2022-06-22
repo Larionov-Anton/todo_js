@@ -1,3 +1,6 @@
+// *Методы 
+
+// Создать новую задачу
 function createTodoItem(title) {
 	const checkbox = document.createElement('input');
 	checkbox.type = 'checkbox';
@@ -31,10 +34,10 @@ function createTodoItem(title) {
 	bindEvents(listItem);
 	
 	return listItem;
+
 }
 
-
-
+// Привязать событие
 function bindEvents(todoItem) {
 	const checkbox = todoItem.querySelector('.checkbox');
 	const editButton = todoItem.querySelector('.edit');
@@ -45,6 +48,7 @@ function bindEvents(todoItem) {
 	deleteButton.addEventListener('click', deleteTodoItem);
 }
 
+// Добавить задачу
 function addTodoItem(event) {
 	event.preventDefault();
 
@@ -55,11 +59,13 @@ function addTodoItem(event) {
 	addInput.value = '';
 }
 
+// Отметить выполнение задачи
 function toggleTodoItem() {
 	const listItem = this.parentNode;
 	listItem.classList.toggle('completed');
 }
 
+// Редактировать задачу
 function editTodoItem() {
 	const listItem = this.parentNode;
 	const title = listItem.querySelector('.title');
@@ -77,13 +83,18 @@ function editTodoItem() {
 	listItem.classList.toggle('editing');
 }
 
+// Удалить задачу
 function deleteTodoItem() {
-
+	const listItem = this.parentNode;
+	todoList.removeChild(listItem);
 }
 
+// *Переменные
+// Получить DOM элементы для взаимодействия
 const todoForm = document.getElementById('todo-form');
 const addInput = document.getElementById('add-input');
 const todoList = document.getElementById('todo-list');
-const todoItem = document.querySelectorAll('.todo-item');
+const todoItems = document.querySelectorAll('.todo-item');
 
+// Повесить обработчик событий на отправку формы
 todoForm.addEventListener('submit', addTodoItem);
