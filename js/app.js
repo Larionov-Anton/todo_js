@@ -1,4 +1,7 @@
-// *Методы 
+// Модуль приложения
+const main = (document => {
+	
+	// *Методы 
 
 // Создать элементы
 function createElement(tag, props, ...children) {
@@ -99,5 +102,9 @@ function main() {
 	todoItems.forEach(item => bindEvents(item));
 }
 
-main();
+return main;
+
+}) (document);
+
+
 
