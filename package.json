@@ -1,0 +1,25 @@
+{
+  "name": "todo_js",
+  "version": "1.0.0",
+  "description": "Application on js in OOP style",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Larionov-Anton/todo_js.git"
+  },
+  "author": "Larionov Anton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Larionov-Anton/todo_js/issues"
+  },
+  "homepage": "https://github.com/Larionov-Anton/todo_js#readme",
+  "devDependencies": {
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.2"
+  }
+}
