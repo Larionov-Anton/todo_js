@@ -42,6 +42,8 @@ class View {
 		const value = this.input.value;
 
 		// add item to model
+		this.emit('add', value);
+	
 	}
 
 	handleToggle({target}) {

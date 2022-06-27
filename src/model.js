@@ -11,6 +11,8 @@ class Model {
 
 	addItem(item) {
 		this.state.push(item);
+
+		return item;
 	}
 
 	updateItem(id, data) {

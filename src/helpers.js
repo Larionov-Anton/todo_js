@@ -16,4 +16,23 @@ function createElement(tag, props, ...children) {
 	return element;
 }
 
+// Эмуляция собственных событий
+
+class EventEmitter {
+	constructor() {
+		this.events = {};
+	}
+
+	on(type, callback) {
+		this.events[type] = this.events[type] || [];
+		this.events[type].push(callback);
+	}
+
+	emit(type, arg) {
+		if (this.event[type]) {
+			this.events[type].forEach(callback => callback(arg));
+		}
+	}
+}
+
 export {createElement};
