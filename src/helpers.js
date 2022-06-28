@@ -16,7 +16,7 @@ function createElement(tag, props, ...children) {
 	return element;
 }
 
-// Эмуляция собственных событий
+// Транслятор собственных событий
 
 class EventEmitter {
 	constructor() {
@@ -35,4 +35,4 @@ class EventEmitter {
 	}
 }
 
-export {createElement};
+export {createElement, EventEmitter};

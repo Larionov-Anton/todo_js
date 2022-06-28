@@ -19,6 +19,8 @@ class Model {
 		const item = this.getItem(id);
 
 		Object.keys(data).forEach(prop => item[prop] = data[prop]);
+
+		return item;
 	}
 
 	removeItem(id) {

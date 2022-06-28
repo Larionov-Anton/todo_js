@@ -1,9 +1,10 @@
 // *Представление (взаимодействие с дом)
 
-import { createElement } from './helpers.js';
+import { createElement, EventEmitter } from './helpers.js';
 
-class View {
+class View extends EventEmitter {
 	constructor() {
+		super();
 		this.form = document.getElementById('todo-form');
 		this.input = document.getElementById('add-input');
 		this.list = document.getElementById('todo-list');
@@ -52,6 +53,7 @@ class View {
 		const completed = target.completed;
 
 		// update model
+		this.emit('toggle', {id, completed});
 	}
 
 	handleEdit({target}) {
@@ -65,6 +67,7 @@ class View {
 
 		if(isEditing) {
 			// update model
+			this.emit('edit', {id, title});
 		} else {
 			input.value = label.textContent;
 			editButton.textContent = 'Сохранить';
@@ -74,8 +77,10 @@ class View {
 
 	handleRemove({target}) {
 		const listItem = target.parentNode;
+		const id = listItem.getAtribute('data-id');
 
 		//remove item from model
+		this.emit('remove', id);
 	}
 
 
