@@ -29,7 +29,7 @@ class EventEmitter {
 	}
 
 	emit(type, arg) {
-		if (this.event[type]) {
+		if (this.events[type]) {
 			this.events[type].forEach(callback => callback(arg));
 		}
 	}
