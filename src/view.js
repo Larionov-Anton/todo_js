@@ -60,18 +60,22 @@ class View extends EventEmitter {
 
 	handleEdit({target}) {
 		const listItem = target.parentNode;
-		const id = target.getAtribute('data-id');
+		const id = listItem.getAttribute('data-id');
 		const label = listItem.querySelector('.title');
 		const input = listItem.querySelector('.textfield');
+			
 		const editButton = listItem.querySelector('button.edit');
-		const title = input.value;
+		let title = input.value;
+			
 		const isEditing = listItem.classList.contains('editing');
 
 		if(isEditing) {
 			// update model
 			this.emit('edit', {id, title});
+			
 		} else {
 			input.value = label.textContent;
+			title = input.value;
 			editButton.textContent = 'Сохранить';
 			listItem.classList.add('editing');
 		}
@@ -119,8 +123,9 @@ class View extends EventEmitter {
 		const editButton = listItem.querySelector('button.edit');
 
 		label.textContent = todo.title;
+			
 		editButton.textContent = 'Изменить';
-		listItem.classList.remove('.editing');
+		listItem.classList.remove('editing');
 
 	}
 
