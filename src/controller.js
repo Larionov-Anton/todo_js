@@ -27,7 +27,6 @@ class Controller {
 
 	editTodo({ id, title }) {
 		const todo = this.model.updateItem(id, { title });
-			console.log(todo);
 		this.view.editItem(todo);
 	}
 

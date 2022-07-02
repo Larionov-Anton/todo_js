@@ -83,7 +83,7 @@ class View extends EventEmitter {
 
 	handleRemove({target}) {
 		const listItem = target.parentNode;
-		const id = listItem.getAtribute('data-id');
+		const id = listItem.getAttribute('data-id');
 
 		//remove item from model
 		this.emit('remove', id);
@@ -130,7 +130,7 @@ class View extends EventEmitter {
 	}
 
 	removeItem(id) {
-		const listItem = this.findListItem(todo.id);
+		const listItem = this.findListItem(id);
 
 		this.list.removeChild(listItem);
 	}
