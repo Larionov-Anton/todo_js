@@ -8,6 +8,7 @@ class View extends EventEmitter {
 		this.form = document.getElementById('todo-form');
 		this.input = document.getElementById('add-input');
 		this.list = document.getElementById('todo-list');
+		
 
 		this.form.addEventListener('submit', this.handleAdd.bind(this));
 	}
@@ -18,10 +19,8 @@ class View extends EventEmitter {
 		const editInput = createElement('input', {type: 'text', className: 'textfield'});
 		const editButton = createElement('button', {className: 'edit'}, 'Изменить');
 		const removeButton = createElement('button', {className: 'remove'}, 'Удалить');
-		// Не присваивает data-id
 		const item = createElement('li', {className: `todo-item${todo.completed ? ' completed' : ''}`, 'dataId': todo.id}, checkbox, label, editInput, editButton, editButton, removeButton);
-		console.log(item);
-
+		
 		return this.addEventListeners(item);
 	}
 
@@ -88,7 +87,9 @@ class View extends EventEmitter {
 
 
 	findListItem(id) {
-		return this.list.querySelector(`[data-id="${id}"]`);
+		const item = this.list.querySelector(`[data-id="${id}"]`);
+		
+		return item ;
 	}
 
 	addItem(todo) {

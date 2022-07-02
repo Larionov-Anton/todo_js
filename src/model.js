@@ -6,12 +6,9 @@ class Model {
 	}
 
 	getItem(id) {
-		console.log(id);
 		const item = this.state.find(item => item.id == id);
 
-		
-		
-		return 
+		return item;
 	}
 
 	addItem(item) {
