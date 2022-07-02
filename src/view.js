@@ -18,7 +18,9 @@ class View extends EventEmitter {
 		const editInput = createElement('input', {type: 'text', className: 'textfield'});
 		const editButton = createElement('button', {className: 'edit'}, 'Изменить');
 		const removeButton = createElement('button', {className: 'remove'}, 'Удалить');
-		const item = createElement('li', {className: `todo-item${todo.completed ? ' completed' : ''}`, 'data-id': todo.id}, checkbox, label, editInput, editButton, editButton, removeButton);
+		// Не присваивает data-id
+		const item = createElement('li', {className: `todo-item${todo.completed ? ' completed' : ''}`, 'dataId': todo.id}, checkbox, label, editInput, editButton, editButton, removeButton);
+		console.log(item);
 
 		return this.addEventListeners(item);
 	}
@@ -50,6 +52,7 @@ class View extends EventEmitter {
 	handleToggle({target}) {
 		const listItem = target.parentNode;
 		const id = listItem.getAttribute('data-id');
+		
 		const completed = target.checked;
 
 		// update model

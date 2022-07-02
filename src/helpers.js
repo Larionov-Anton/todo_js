@@ -2,8 +2,17 @@
 
 function createElement(tag, props, ...children) {
 	const element = document.createElement(tag);
-
-	Object.keys(props).forEach(key => element[key] = props[key]);
+	// Не может присвоить data-id
+	// Написать условие что бы data-id устанавливался только для всего списка 
+	
+	Object.keys(props).forEach(key => {
+		if(key.includes('data')) {
+			element.dataset.id = props.dataId;
+		} else {
+			element[key] = props[key];
+		}	
+	});
+	
 
 	children.forEach(child => {
 		if (typeof child === 'string') {

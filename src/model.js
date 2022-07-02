@@ -6,12 +6,19 @@ class Model {
 	}
 
 	getItem(id) {
-		return this.state.find(item => item.id == id);
+		console.log(id);
+		const item = this.state.find(item => item.id == id);
+
+		
+		
+		return 
 	}
 
 	addItem(item) {
+		
 		this.state.push(item);
-
+		
+		
 		return item;
 	}
 
@@ -19,7 +26,7 @@ class Model {
 		const item = this.getItem(id);
 
 		Object.keys(data).forEach(prop => item[prop] = data[prop]);
-
+		
 		return item;
 	}
 
