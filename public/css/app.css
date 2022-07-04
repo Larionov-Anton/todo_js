@@ -108,7 +108,48 @@ header h1 {
 	 font-size: 2.5rem;
 }
 
+@media (max-width: 1144px) {
+	button {
+		font-size: 20px;
+	}
+}
 
+@media (max-width: 975px) {
+	button {
+		font-size: 15px;
+	}
+}
+
+@media (max-width: 769px) { 
+
+	main {
+		width: 95%;	
+  }
+	header h1 {
+		font-size: 2rem;
+	}
+	button {
+		font-size: 12px;
+		padding: 0 5px;
+		min-width: 0px;
+	}
+	input {
+		font-size: 1.2rem;
+   }
+ }
+
+ @media (max-width:426px) {
+	button {
+		font-size: 8px;
+	}
+	header h1 {
+		font-size: 1.5rem;
+	}
+
+	input {
+		font-size: 1rem;
+   }
+}
 
 /* Todo Item */
 .todo-item {
@@ -133,7 +174,6 @@ header h1 {
     margin-right: .5rem;
 	 height: 1.5rem;
 	 width: 1.5rem;
-	 
 }
 
 .todo-item .title,
@@ -166,7 +206,40 @@ header h1 {
     opacity: 1;
 }
 
+@media (max-width: 1144px) {
+	.todo-item {
+		font-size: 1.7rem;
+	}
+}
 
+@media (max-width: 975px) {
+	.todo-item {
+		font-size: 1.5rem;
+	}
+	.todo-item .checkbox {
+		height: 1.2rem;
+		width: 1.2rem;
+  }
+}
+
+
+@media (max-width: 769px) {
+	.todo-item {
+		font-size: 1rem;
+		padding: 0.5em;
+	}
+
+   .todo-item .checkbox {
+		height: 1rem;
+		width: 1rem;
+}
+}
+
+@media (max-width:426px) {
+	.todo-item {
+		font-size: 0.8rem;
+	}
+}
 
 /* Todo form */
 
@@ -190,4 +263,26 @@ header h1 {
 
 #todo-form button {
 	 margin: 8px 10px;
+}
+
+@media (max-width:769px) {
+	#todo-form {
+		height: 40px;
+  }
+  #todo-form button {
+	margin: 0px 10px;
+}
+}
+
+@media (max-width:426px) {
+	#todo-form {
+		height: 30px;
+		padding: 5px;
+  }
+  #todo-form button {
+		margin: 0px 0px 0px 5px;
+		font-size: 10px;
+		height: 30px;
+		line-height: 0px;
+  }
 }
