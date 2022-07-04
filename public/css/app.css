@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@700&family=Yanone+Kaffeesatz&display=swap');
+
 body {
-    background-color: #fafafa;
+	 background: no-repeat url(../img/background_todo.jpg);
     color: #757575;
-    font-family: 'Consolas', Arial, Helvetica, sans-serif;
+	 font-family: 'Yanone Kaffeesatz', sans-serif;
     margin: 0;
 }
 
@@ -15,7 +17,7 @@ button {
     background: 0 0;
     border: none;
     border-radius: 2px;
-    color: #757575;
+    color: #0E0117;
     position: relative;
     height: 36px;
     margin: 0;
@@ -23,7 +25,7 @@ button {
     padding: 0 16px;
     display: inline-block;
     font-family: "Consolas","Helvetica","Arial",sans-serif;
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0;
@@ -39,11 +41,11 @@ button {
 }
 
 button:hover {
-    background-color: rgba(158,158,158,.2);
+    background-color: rgba(158,158,158,.3);
 }
 
 button:active {
-    background-color: rgba(158,158,158,.4);
+    background-color: rgba(158,158,158,.5);
 }
 
 button.icon {
@@ -70,9 +72,9 @@ button .material-icons {
 }
 
 input {
-    font-family: 'Consolas', Arial, Helvetica, sans-serif;
-    font-size: 1.3rem;
-    color: #757575;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: 1.5rem;
+    color: #0E0117;
     padding: .5em;
     border-radius: 2px;
     border: 1px solid lightgray;
@@ -80,7 +82,7 @@ input {
 }
 
 main {
-    background: #fff;
+	 opacity: 0.9;
     width: 80%;
     margin: 70px auto;
     border-radius: 2px;
@@ -93,9 +95,10 @@ header {
     align-items: center;
     padding: 0 1rem;
     color: white;
-    background-color: #f0db4f;
+    background-color: #FFF154;
     text-align: center;
     text-transform: uppercase;
+	 font-family: 'Exo 2', sans-serif;
 }
 
 header h1 {
@@ -110,8 +113,9 @@ header h1 {
 /* Todo Item */
 .todo-item {
     display: flex;
-    font-size: 1.3rem;
-    border-top: 1px solid rgba(0,0,0,.1);
+    font-size: 1.8rem;
+	 color: #0E0117;
+    border-top: 1px solid rgba(0,0,0,.2);
     background-color: #fff;
     transition: all .2s;
     -webkit-user-select: none;
@@ -124,8 +128,12 @@ header h1 {
     color: lightgray;
 }
 
+
 .todo-item .checkbox {
     margin-right: .5rem;
+	 height: 1.5rem;
+	 width: 1.5rem;
+	 
 }
 
 .todo-item .title,
@@ -165,7 +173,7 @@ header h1 {
 #todo-form {
     display: flex;
     background-color: #FAFAFA;
-    border-top: 1px solid rgba(0,0,0,.1);
+    border-top: 1px solid rgba(0,0,0,.2);
     padding: 10px;
 }
 
@@ -173,12 +181,13 @@ header h1 {
     flex: 1;
     outline: none;
     transition: all .2s;
+	 border: 1px solid rgba(0,0,0,.5);
 }
 
 #todo-form input:focus {
-    border: 1px solid #f0db4f;
+    border: 2px solid rgba(0,0,0,.5);
 }
 
 #todo-form button {
-    margin-left: 10px;
+	 margin: 8px 10px;
 }
