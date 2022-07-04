@@ -42,4 +42,19 @@ class EventEmitter {
 	}
 }
 
-export {createElement, EventEmitter};
+// Сохранение данных в Local Storage
+
+function save(data) {
+	const string = JSON.stringify(data);
+
+	localStorage.setItem('todos', string);
+}
+
+function load() {
+	const string = localStorage.getItem('todos');
+	const data = JSON.parse(string);
+
+	return data;
+}
+
+export {createElement, EventEmitter, save, load};

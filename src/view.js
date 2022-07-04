@@ -88,7 +88,14 @@ class View extends EventEmitter {
 		//remove item from model
 		this.emit('remove', id);
 	}
+	
+	show(todos) {
+		todos.forEach(todo => {
+			const listItem = this.createElement(todo);
 
+			this.list.appendChild(listItem);
+		});
+	}
 
 	findListItem(id) {
 		const item = this.list.querySelector(`[data-id="${id}"]`);
