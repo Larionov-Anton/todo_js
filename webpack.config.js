@@ -4,7 +4,7 @@ module.exports = {
 	mode: 'development',
 	entry: './src/index',
 	output: {
-		path: path.resolve(__dirname, 'public'),
+		path: path.resolve(__dirname, 'public/js/'),
 		filename: 'app.js',
 		publicPath: '/js'
 	}, 
